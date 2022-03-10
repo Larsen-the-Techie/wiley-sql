@@ -1,0 +1,21 @@
+select ucase(last_name) as uname,lcase(last_name) lname from employees;
+select last_name,length(last_name) from employees;
+select substr("wiley india",1,5) as brand;
+select substr("wiley india",7) as brand;
+select substr("wiley india",7,2) as brand;
+select employee_id,last_name,job_id,salary,hire_date from employees where substr(last_name,1,1) in 
+('a','b','c','d','e','f') order by last_name;
+select lpad("wiley",10,"*") as brand;
+select lpad(last_name,20,'*') from employees ;
+select rpad("wiley",10,"*") as brand;
+select lpad(rpad("wiley",10,"*"),15,'*') as brand;
+create table emp as select employee_id,last_name from employees where department_id=30;
+desc emp;
+select * from emp where last_name='Kamal';
+insert into emp values(120,'    Kamal');
+insert into emp values (121,'Kamal     ');
+commit;
+select * from emp where ltrim(last_name)='Kamal';
+select * from emp where rtrim(last_name)='Kamal';
+select * from emp where rtrim(ltrim(last_name))='Kamal';
+select * from emp;
